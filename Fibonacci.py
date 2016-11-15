@@ -14,14 +14,25 @@ def fibs(n):
 
 #递归函数生成斐波那契数列
 def fibs(n):
-   if n <= 1:
+   if n < 2:
        return n
    else:
        return(fibs(n-1) + fibs(n-2))
 
 def run(items):
   for i in range(items):
-    print(fibs(i))
+    print(fibs(i))          #生成一组数列
+
+#或者生成第n个斐波那契数列
+
+def fibs(n):
+    a = [0, 1]
+    if n < 2:
+        return a[n]
+    else:
+        for i in range(2, n+1):
+            a.append(a[i-2]+a[i-1])
+        return a[n]                 #生成第n个菲波那切数
 
 
 #迭代器生成斐波那契数列
