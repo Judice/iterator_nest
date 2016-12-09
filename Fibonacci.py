@@ -48,3 +48,21 @@ class Fibs():
 
     def __iter__(self):
         return self
+
+#迭代器生成斐波那契数列    
+ class Fab(object): 
+
+    def __init__(self, max): 
+        self.max = max 
+        self.n, self.a, self.b = 0, 0, 1 
+
+    def next(self): 
+        if self.n < self.max: 
+            r = self.b 
+            self.a, self.b = self.b, self.a + self.b 
+            self.n = self.n + 1 
+            return r 
+        raise StopIteration()
+        
+    def __iter__(self): 
+        return self 
